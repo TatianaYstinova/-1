@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace задание3
 {
-    internal class СountingBanknotesByAutomat
+    public static class СountingBanknotesByAutomat
     {
         public static int AmountRequested()
         {
@@ -16,27 +16,27 @@ namespace задание3
         }
         public static int OptimalNumberBanknotes(int money)
         {
-            int rubl1000 = 0;
-            int rubl500 = 0;
-            int rubl100 = 0;
+            int rublThousand = 0;
+            int rublFiveHndred = 0;
+            int rublOneHundred = 0;
 
             while (money >= 1000)
             {
                 money = money - 1000;
-                rubl1000++;
+                rublThousand++;
             }
             while (money >= 500)
             {
                 money = money - 500;
-                rubl500++;
+                rublFiveHndred++;
             }
             while (money >= 100)
             {
                 money = money - 100;
-                rubl100++;
+                rublOneHundred++;
             }
             
-            return rubl1000 + rubl500 + rubl100;
+            return rublThousand + rublFiveHndred + rublOneHundred;
         }
     }
 }
