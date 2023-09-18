@@ -29,6 +29,18 @@ namespace задача_2
         }
         public static int AmountOfSavings(int durationYears, int sum, int percent) 
         {
+            if (percent < 0)
+            {
+                throw new ArgumentException("percent < 0 tak nelzia");
+            }
+            if(durationYears < 0)
+            {
+                throw new ArgumentException("durationYear < 0 tak nelzia");
+            }
+            if (sum < 0)
+            {
+                throw new ArgumentException("sum < 0 tak nelzia");
+            }
             for (int i = 1; i <= durationYears; i++)
             {
                 sum += sum * percent / 100;

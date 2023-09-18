@@ -33,8 +33,17 @@ namespace задание_1
             return totalMoney;
         }
         public static bool AreOffersAvailable(int bankProductsAmount, int totalMoney, int age)
-        {
+        { 
+            if (bankProductsAmount < 0)
+            {
+                throw new ArgumentException("bankProductsAmount < 0 tak nelzia");
+            }
+            if( age<0)
+            {
+                throw new ArgumentException("age < 0 tak nelzia");
+            }
             return age > 60 && ((totalMoney > 1000000) || (totalMoney > 400000 && bankProductsAmount >= 3));
         }
+
     }
 }

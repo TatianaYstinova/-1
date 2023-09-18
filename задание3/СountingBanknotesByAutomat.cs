@@ -19,6 +19,10 @@ namespace задание3
             int rublThousand = 0;
             int rublFiveHndred = 0;
             int rublOneHundred = 0;
+            if(money < 0) 
+            {
+                throw new ArgumentException("money < 0 tak nelzia");
+            }
 
             while (money >= 1000)
             {
